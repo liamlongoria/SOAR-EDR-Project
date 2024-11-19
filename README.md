@@ -19,23 +19,26 @@ Integrates a Security Orchestration, Automation, and Response (SOAR) platform (T
 - <b>LimaCharlie (EDR)</b>
 - <b>Slack and Email (Alerts)</b>
 
-<h2>Project Walkthrough:</h2>
+<h2>Project Walkthrough</h2>
 
 **Step 1:** Spun up an instance in AWS and connected to virtual machine (VM) using remote desktop protocol (RDP).
 
 <img width="956" alt="AWSspin" src="https://github.com/user-attachments/assets/87a92032-2b68-4a76-9233-e3abd6162e35">
 
+<br>
 
 **Step 2:** Created installation key in LimaCharlie to enroll EDR into VM by installing LimaCharlie agent in Powershell.
 
 <img width="957" alt="Installationkey" src="https://github.com/user-attachments/assets/5a2257cd-5bc3-4997-9212-a8beae35d6c0">
 
+<br>
 
 **Step 3:** Installed and ran LaZagne, a password recovery tool, which generated events in LimaCharlie.
 
 <img width="953" alt="LasagnePS" src="https://github.com/user-attachments/assets/3292ddef-3bd8-4612-8c60-47d64b2f9277">
 <img width="955" alt="LasagneProcessTL Lima" src="https://github.com/user-attachments/assets/253fd824-9fc6-47a6-9bf3-31dca7db747c">
 
+<br>
 
 **Step 4:** Created detection and responce rule for Lazagne events. Then ensured that events were captured in the detections section.
 
@@ -43,16 +46,19 @@ Integrates a Security Orchestration, Automation, and Response (SOAR) platform (T
 <img width="938" alt="EDR Respond" src="https://github.com/user-attachments/assets/86787b0f-4884-4c81-81af-ad16c2a90aad">
 <img width="953" alt="Detectsuccess" src="https://github.com/user-attachments/assets/1995ef59-9f0b-4912-942f-2aaf1007d3b2">
 
+<br>
 
 **Step 5:** Set up Tines and Slack, then interconnected them with LimaCharlie
 
 <img width="956" alt="tinesdetection" src="https://github.com/user-attachments/assets/821b2137-5e75-4696-b9bb-379a60581d4d">
 
+<br>
 
 **Step 6:** Created a playbook/story in Tines, which sends a Slack message and an email containing information about the detection from LimaCharlie. It would then generate a prompt asking if we want to isolate the machine. From there, automation is created to isolate the machine based on the user responce.
 
 ![Longo-SOAR-EDR Project-storyboard](https://github.com/user-attachments/assets/9c00c2c5-5878-4f65-ab55-1ed54aeaf045)
 
+<br>
 
 **Step 7:** Test ran the playbook/story and responded yes to the user prompt to isolate the machine.
 
